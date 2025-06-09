@@ -1,0 +1,67 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+}
+
+.profile-cont{
+    height:165px;
+    width:300px;
+    border:1px solid rgba(255, 255, 255, 0.295);
+    margin-top:20px;
+    margin-left:70px;
+    padding:15px;
+    border-radius:20px;
+    background-image: url(./profile-image.avif);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.profile-img{
+    height:55px;
+    width:55px;
+    margin-bottom: 7px;
+}
+.profile-name{
+    color:rgb(158, 155, 168);
+}
+.profile-bio{
+    font-weight:400;
+    font-size:13px;
+    color:rgb(255, 255, 255);
+}
+.emp-type-list{
+    width:300px;
+    border-top:1px solid white;
+    margin-top:20px;
+    margin-left:70px;
+    list-style: none;
+    padding:0px;
+    padding-top:10px;
+}
+.salary-range-list{
+    width:300px;
+    border-top: 1px solid white;
+    margin-top:20px;
+    margin-left:70px;
+    list-style: none;
+    padding:0px;
+    padding-top:8px;
+    
+}
+label{
+    margin-left:10px;
+}
+.job-type{
+    font-size: 13px;
+    margin-top:8px;
+}
+.salary{
+    font-size: 13px;
+    margin-top:8px;
+}
+.loader{
+    display:flex;
+    flex-direction:inline;
+    justify-content: center;
+    margin-top: 30px;
+}

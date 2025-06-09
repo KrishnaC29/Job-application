@@ -1,0 +1,76 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+.job-card{
+    width:85%;
+    background-color: rgba(37, 37, 35, 0.815);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+    padding:10px;
+    list-style: none;
+}
+.link-cont{
+    text-decoration: none;
+    color:white;
+}
+.company-logo{
+    height:53px;
+    width:53px;
+}
+.rating-icon{
+    height:15px;
+    width:15px;
+}
+.logo-cont{
+    display:flex;
+    flex-direction: row;
+}
+.location-salary-cont{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding-top:10px;
+}
+.post-rating-cont{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left:7px;
+}
+span{
+    width:28%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.rating-icon{
+    font-family:FontAwesome;
+    color:yellow;
+}
+.location{
+    font-size:12px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.internship{
+    font-size: 12px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.discription-cont{
+    border:1px solid white;
+    text-align: start;
+    padding-top: 9px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.job-discription{
+    font-size: 11px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.discription{
+    font-weight:400;
+}

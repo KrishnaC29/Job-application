@@ -1,0 +1,49 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+.similar-jobs-list{
+    height:270px;
+    color:white;
+    list-style: none;
+    width:40%;
+    background-color:rgba(66, 57, 57, 0.712);
+    padding:10px;
+    margin-top: 5px;
+    margin-right:20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+.logo-title-cont{
+    display:flex;
+    flex-direction:inline;
+}
+#logo{
+    width:55px;
+    height:55px;
+}
+#description-cont{
+    padding-top:10px;
+    padding-right:20px;
+    height:62%;
+}
+#description-text{
+    font-size:12px;
+    font-weight: 350;
+}
+#location-jobtype-cont{
+    padding-top:13px;
+    display:flex;
+    flex-direction: inline;
+    height:10%;
+}
+#company-internship{
+    margin-left:20px;
+    font-weight: 100;
+    font-size: 13px;
+}
+#company-location{
+    font-weight: 100;
+    font-size:13px;
+} 
