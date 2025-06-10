@@ -45,3 +45,9 @@
     font-size: 13px;
     margin-left: 30px;
 }
+.username-password{
+   position:relative;
+   right:500px;
+   bottom:30px;
+   color:rgb(55, 129, 129);
+}

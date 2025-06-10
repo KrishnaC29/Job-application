@@ -66,6 +66,8 @@ const Login = () => {
   return (
     <>
       <div className='main-cont'>
+      <p className='username-password'>[username: rahul<br/>
+      password: rahul@2021]</p>
         <img className='img1' src='https://assets.ccbp.in/frontend/react-js/logo-img.png' alt='joblogo' />
         <form className='form' onSubmit={onSubmitUserDetails}>
           <div className="mb-3">
