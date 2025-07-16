@@ -145,10 +145,10 @@ const DetailedJobs = () => {
                     <h5>Similar Jobs</h5>
                     
                     {allValues.isFetchDetailedJobs   ? (<div className='job-detailed-loader'>
-                        <div class="spinner-border" role="status">
+                        <div className="spinner-border" role="status">
                         </div>
                     </div>)   : (<ul className='similar-job-list-cont'>
-                        {allValues.similarJobsDetails.map((info) => <SimilarJobs key='info.id' jobInfo={info} />)}
+                        {allValues.similarJobsDetails.map((info,index) => <SimilarJobs key={`${info.id}-${index}`} jobInfo={info} />)}
                     </ul>) }
                     
 

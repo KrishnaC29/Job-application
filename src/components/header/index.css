@@ -19,16 +19,43 @@
     display: flex;
     flex-direction: row;
 }
+#logout-btn{
+    height:35px;
+    width:80px;
+    border-radius:15px;
+    border:none;
+    background-color:rgb(233, 236, 240);
+}
+#logout-btn:hover{
+    background-color:rgb(156, 86, 221);
+     box-shadow: 3px 3px 5px;
+}
 .img2{
     width:130px;
     height:35px;
 }
-.link{
-    margin-right: 25px;
-    font-size: 20px;
-    text-decoration: none;
-    color:white;
+.link {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem;
+  margin-right: 25px;
+  font-size: 20px;
+  text-decoration: none;
+  color:rgb(89, 219, 228);
+  cursor: pointer;
 }
-.link:hover {
-    color:rgb(69, 23, 236);
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #007BFF; /* or any accent color */
+  transition: width 0.3s ease-in-out;
+}
+
+.link:hover::after {
+  width: 100%;
 }

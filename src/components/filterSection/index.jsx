@@ -103,7 +103,7 @@ const FilterSection = (props) => {
     return (
         <>
             {allValues.isFetchCorrectly ? (<div className='loader'>
-                        <div class="spinner-border" role="status">
+                        <div className="spinner-border" role="status">
                         </div>
                     </div>) : (<div className='profile-cont'>
                 <img className='profile-img' src={allValues.profileDetails.profile_image_url}></img>

@@ -3,6 +3,9 @@
     padding:0px;
     box-sizing: border-box;
 }
+html,body{
+    background-color: black;
+}
 .filer-alljobs-container{
     width:100%;
     display:flex;
@@ -35,12 +38,17 @@
 }
 .search-btn{
     height:33px;
-    width:50px;
+    width:60px;
     background-color:rgb(34, 33, 33);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border:none;
 }
+.search-btn:hover{
+    transform:scale(1.1,1.1);
+    box-shadow:4px 4px 7px black;
+}
+
 .search-icon-btn{
     display:flex;
     flex-direction:row;
@@ -55,4 +63,8 @@
     justify-content: center;
     position:relative;
     top:100px;
+}
+.no-results-text{
+    position:relative;
+    left:50px;
 }

@@ -24,51 +24,50 @@ const Jobs = () => {
         empType: [],
         salaryRange: '',
         searchInput: '',
-        isFetchCorrectly: false
+        isFetchCorrectly: false,
+        searchText: ''
     })
 
-    useEffect(() => {
+    const fetchJobsData = async (searchQuerry = allValues.searchInput) => {
 
+        setValues({ ...allValues, isFetchCorrectly: true })
+        const api = `https://apis.ccbp.in/jobs?employment_type=${allValues.empType}&minimum_package=${allValues.salaryRange}&search=${searchQuerry}`;
 
+        const token = Cookies.get("jwtToken");
 
-        const fetchJobsData = async () => {
-            
-            setValues({...allValues,isFetchCorrectly:true})
-            const api = `https://apis.ccbp.in/jobs?employment_type=${allValues.empType}&minimum_package=${allValues.salaryRange}&search=${allValues.searchInput}`;
-
-
-            const token = Cookies.get("jwtToken");
-
-            const options = {
-                method: "GET",
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+        const options = {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`
             }
-            const response = await fetch(api, options);
-            const fetchingData = await response.json();
-            console.log(fetchingData.jobs);
+        }
+        const response = await fetch(api, options);
+        const fetchingData = await response.json();
+        console.log(fetchingData.jobs);
 
 
-            if (response.ok === true) {
-                setValues({ ...allValues, jobDetails: fetchingData.jobs, isFetchCorrectly:false });
-
-            }
-
-
+        if (response.ok === true) {
+            setValues({ ...allValues, jobDetails: fetchingData.jobs, isFetchCorrectly: false });
 
         }
+
+    }
+
+    useEffect(() => {
 
         fetchJobsData();
     }, [allValues.searchInput, allValues.empType, allValues.salaryRange])
 
-    const onSearchingJob = (e) => {
+    // const onSearchingJob = (e) => {
 
-        if (e.key === "Enter") {
-            console.log(e.target.value);
-            setValues({ ...allValues, searchInput: e.target.value });
-        }
-    }
+    //     if (e.key === "Enter") {
+
+    //         console.log(e.target.value);
+    //         setValues({ ...allValues, searchInput: e.target.value });
+
+
+    //     }
+    // }
 
     const onChangeEmpType = (value, checked) => {
         console.log(checked);
@@ -102,22 +101,42 @@ const Jobs = () => {
                 <div className='filter-section-cont'>
                     <FilterSection empTypeChangeFunction={onChangeEmpType} salaryRangeChangeFunction={onChangeSalaryRange} />
                 </div>
-                 
+
                 <div className='all-jobs-cont'>
                     <div className='search-icon-btn'>
-                        <input onKeyDown={onSearchingJob} className='search-bar' type='search' placeholder='Search' />
-                        <button className='search-btn'><FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} /> </button>
+                        <input value={allValues.searchText}
+                            onChange={(e) => setValues({ ...allValues, searchText: e.target.value })}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    setValues({ ...allValues, searchInput: allValues.searchText });
+                                    fetchJobsData(allValues.searchText);
+                                }
+                            }
+                            }
+
+                            className='search-bar' type='search' placeholder='Search' />
+                        <button onClick={() => {
+                            setValues({ ...allValues, searchInput: allValues.searchText });
+                            fetchJobsData(allValues.searchText);
+                        }}
+
+                            className='search-btn'><FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} /> </button>
                     </div>
-                    {allValues.isFetchCorrectly   ?  ( <div className='spinner'>
-                        <div class="spinner-border" role="status">
+
+
+                    {allValues.isFetchCorrectly ? (<div className='spinner'>
+                        <div className="spinner-border" role="status">
                         </div>
-                    </div>) : 
-                    (<ul className='card-list'>
+                    </div>) : (
+                        allValues.jobDetails.length === 0 ? (
+                            <p className='no-results-text'>No results found for your search.</p>
+                        ) :
+                            (<ul className='card-list'>
 
-                        {allValues.jobDetails.map((each) => <DisplayAllJobs key='each.id' jobItems={each} />)}
-                    </ul>) }
+                                {allValues.jobDetails.map((each, index) => <DisplayAllJobs key={`${each.id}-${index}`} jobItems={each} />)}
+                            </ul>))}
 
-                    
+
                 </div>
             </div>
 

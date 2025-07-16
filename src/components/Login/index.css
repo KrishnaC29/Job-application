@@ -1,53 +1,116 @@
-*{
-    margin:0px;
-    padding:0px;
+* {
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
-.main-cont{
-    height:100vh;
-    width:100vw;
-    border:1px solid black;
-     display:flex;
+
+.main-cont {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    border: 1px solid black;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(5, 14, 27);
+    background: linear-gradient(to right bottom, rgb(0, 5, 14), rgb(136, 76, 189)60%)
 }
-.form{
-    width:300px;
-    height:330px;
-    padding:20px;
-    background-color:rgb(85, 78, 75);
+
+.form {
+    position:relative;
+    bottom: 50px;
+    width: 340px;
+    height: 490px;
+    padding: 20px;
     border-radius: 10px;
-    color:white;
+    color: white;
+    background-color: rgb(88, 148, 238);
+    box-shadow: 4px 6px 8px 2px rgba(33, 17, 48, 0.705);
+    animation-name: Bounce;
+    animation-duration: 1s;
+}
+
+.mb-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-logo {
+    width: 80px;
+    height: 80px;
+    color: rgb(21, 22, 26);
+}
+
+.logo-username {
+    position: relative;
+    right: 570px;
+    top:10px;
+}
+
+.img1 {
+    width: 170px;
+    height: 50px;
+}
+
+.my-button {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: rgb(7, 8, 8);
+    margin-top: 10px;
+}
+.my-button.animate {
+  animation: pulse 0.4s ease;
+}
+.my-button:hover{
+    transform:translate(0px,-5px);
+    box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.781);
+}
+@keyframes pulse{
+    50%{
+        transform:translate(0px,-5px);
+        box-shadow: 5px 5px 5px 0px black;
+        letter-spacing: 10px;
+    }
+}
+
+
+#exampleInputEmail1 {
+    background-color: rgba(0, 0, 0, 0.267);
+    color: rgb(7, 0, 0);
+    border: none;
+    margin-top: 10px;
+}
+
+#exampleInputEmail1:hover,
+#exampleInputPassword1:hover {
+    border-radius: 0px;
+    transform: scale(1.07);
+    border: 0px;
+    box-shadow: 2px 2px 5px;
 
 }
-.img1{
-    width:170px;
-    height:50px;
-    margin-bottom: 20px;
+
+#exampleInputPassword1 {
+    background-color: rgba(0, 0, 0, 0.267);
+    color: rgb(14, 1, 1);
+    border: none;
+    margin-top: 10px;
 }
-#submit-btn{
-    width:260px;
-}
-#exampleInputEmail1{
-   background-color:rgba(0, 0, 0, 0.267);
-   color:white;
-   border:1px solid rgba(0, 0, 0, 0.658);
-}
-#exampleInputPassword1{
-    background-color:rgba(0, 0, 0, 0.267);
-    color:white;
-    border:1px solid rgba(0, 0, 0, 0.637);
-}
-.errstatement{
-    color:rgb(110, 2, 2);
+
+.errstatement {
+    color: rgb(110, 2, 2);
     font-size: 13px;
     margin-left: 30px;
+    margin-top: 10px;
 }
-.username-password{
-   position:relative;
-   right:500px;
-   bottom:30px;
-   color:rgb(55, 129, 129);
+
+.username-password {
+    color: rgb(55, 129, 129);
+}
+.form-label{
+    color:black;
 }

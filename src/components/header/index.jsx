@@ -22,7 +22,7 @@ const Header = () => {
                     <Link className='link' to="/">Home</Link>
                     <Link className='link' to="/jobs">Jobs</Link>
                 </div>
-                <button onClick={onClickLogoutBtn} id='logout-btn' type="submit" className="btn btn-primary btn-sm ">Logout</button>
+                <button onClick={onClickLogoutBtn} id='logout-btn' type="submit">Logout</button>
             </nav>
         </>
     )
