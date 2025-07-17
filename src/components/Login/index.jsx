@@ -78,6 +78,7 @@ const Login = () => {
         <form className='form' onSubmit={onSubmitUserDetails}>
           <div className='mb-1'>
             <FaUserCircle className='user-logo' />
+            <h3 className="signin" >Sign in</h3>
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Username</label>

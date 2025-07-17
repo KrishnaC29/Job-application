@@ -12,8 +12,8 @@
     justify-content: space-between;
     align-items: center;
     padding:30px;
-   position:fixed;
-   z-index: 1;
+    position:fixed;
+    z-index: 1;
 }
 .page-cont{
     display: flex;
@@ -29,17 +29,19 @@
 #logout-btn:hover{
     background-color:rgb(156, 86, 221);
      box-shadow: 3px 3px 5px;
+     transform:translate(0px,-3px)
 }
 .img2{
     width:130px;
-    height:35px;
+    height:40px;
 }
 .link {
   position: relative;
   display: inline-block;
   padding: 0.5rem;
   margin-right: 25px;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 600;
   text-decoration: none;
   color:rgb(89, 219, 228);
   cursor: pointer;

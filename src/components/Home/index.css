@@ -31,15 +31,24 @@
     font-family:Arial, Helvetica, sans-serif;
     box-shadow: 3px 3px 5px 0px black,-0.5px -0.5px 0.3px 0px rgb(255, 254, 254);
     position: relative;
-    top: -400px;
-    animation-name: bounce;
-    animation-duration:1.4s;
-    animation-fill-mode: forwards;
+    /* top: -400px; */
+
 }
-.find-job-btn:hover{
-    animation-play-state: paused;
-    transform: translate(0px,10px);
+.find-job-btn.animate {
+    animation: none;
+  animation-name:popEffect ;
+  animation-duration:0.4s;
+  animation-timing-function: ease;
 }
+
+@keyframes popEffect {
+  50% {
+    transform: translate(0px,-8px);
+    letter-spacing: 1px;
+
+  }
+}
+
 .heading {
     position: relative;
     right: 500px;
@@ -63,23 +72,28 @@
     }
 }
 
+.find-job-btn.bounce{
+    animation-name: bounce;
+    animation-duration:1.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
 .side-heading {
     position: relative;
-    top: -400px;
     animation-name: bounce;
     animation-duration: 1.4s;
     animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
-
 @keyframes bounce {
-    from {
-        position: relative;
-        top: -400px;
-    }
+      from {
+    transform: translateY(-400px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 
-    to {
-        position: relative;
-        top: -400px;
-        transform: translate(0px, 400px)
-    }
 }
+
+
